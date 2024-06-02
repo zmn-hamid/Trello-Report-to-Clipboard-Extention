@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Positive Glass Chrome Extension",
+  "version": "1.0",
+  "description": "Displays positive and negative items from a webpage in a text box.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>","http://*/*", "https://*/*"],
+      "js": ["popup.js"]
+    }
+  ],
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["popup.html","injected-script.js"],
+      "matches": ["<all_urls>","http://*/*", "https://*/*"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
