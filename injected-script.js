@@ -1,4 +1,4 @@
-const textareas = document.querySelectorAll('textarea');
+var textareas = document.querySelectorAll('textarea');
 var items = [];
 
 items.push('😏 Done:')
